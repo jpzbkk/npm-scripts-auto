@@ -14,45 +14,46 @@ This script automatically loads all `npm` scripts from the `package.json` in you
 
 1. **Download the Script**
 
-\`\`\`bash
+```bash
 curl -o ~/npm-scripts-auto.sh https://path-to-your-script.sh
-\`\`\`
-*(Replace the URL with the actual script location if hosting it somewhere)*
+```
+
+_(Replace the URL with the actual script location if hosting it somewhere)_
 
 Or create the file manually:
 
-\`\`\`bash
+```bash
 touch ~/npm-scripts-auto.sh
 nano ~/npm-scripts-auto.sh
-\`\`\`
+```
 
 Then paste the [script content](#) into it.
 
 2. **Make It Executable (Optional)**
 
-\`\`\`bash
+```bash
 chmod +x ~/npm-scripts-auto.sh
-\`\`\`
+```
 
 3. **Source the Script in Zsh**
 
 Edit your `~/.zshrc`:
 
-\`\`\`bash
+```bash
 nano ~/.zshrc
-\`\`\`
+```
 
 Add this line:
 
-\`\`\`bash
+```bash
 source ~/npm-scripts-auto.sh
-\`\`\`
+```
 
 Reload your shell:
 
-\`\`\`bash
+```bash
 source ~/.zshrc
-\`\`\`
+```
 
 ---
 
@@ -60,13 +61,13 @@ source ~/.zshrc
 
 Just `cd` into any project folder with a `package.json`:
 
-\`\`\`bash
+```bash
 cd ~/projects/my-app
-\`\`\`
+```
 
 Assuming your `package.json` looks like this:
 
-\`\`\`json
+```json
 {
   "scripts": {
     "start": "node app.js",
@@ -74,15 +75,15 @@ Assuming your `package.json` looks like this:
     "test": "jest"
   }
 }
-\`\`\`
+```
 
 You can now run:
 
-\`\`\`bash
+```bash
 start   # Runs 'npm run start'
 build   # Runs 'npm run build'
 test    # Runs 'npm run test'
-\`\`\`
+```
 
 No need for `npm run`!
 
@@ -101,13 +102,13 @@ No need for `npm run`!
 - **Zsh** (this won't work with Bash or other shells).
 - **jq** for parsing JSON:
 
-\`\`\`bash
+```bash
 # macOS
 brew install jq
 
 # Debian/Ubuntu
 sudo apt-get install jq
-\`\`\`
+```
 
 ---
 
@@ -117,15 +118,15 @@ If you want to disable this feature:
 
 1. Remove or comment out the line in your `~/.zshrc`:
 
-\`\`\`bash
+```bash
 # source ~/npm-scripts-auto.sh
-\`\`\`
+```
 
 2. Reload the config:
 
-\`\`\`bash
+```bash
 source ~/.zshrc
-\`\`\`
+```
 
 ---
 
