@@ -30,12 +30,9 @@ npm_scripts_update() {
       _npm_script_cmds[$script]=1
     done
 
-    # Display loaded scripts
+     # Display loaded scripts
     if [[ ${#scripts[@]} -gt 0 ]]; then
-      echo "\n🎯 NPM Scripts Loaded:"
-      for script in $scripts; do
-        echo "  - $script"
-      done
+      echo "⚡ npm scripts loaded: ${(j:, :)scripts}"
       echo
     fi
   fi
