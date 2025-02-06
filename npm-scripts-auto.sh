@@ -35,10 +35,19 @@ scripts() {
                 return 0
                 ;;
             *)
+                # Check if input is a number or script name
                 if [[ -n $script ]]; then
+                    # Number was selected from menu
                     echo "\nRunning: ${PACKAGE_MANAGER} run $script\n"
                     $PACKAGE_MANAGER run $script
                     return 0
+                elif [[ " ${scripts[@]} " =~ " $REPLY " ]]; then
+                    # Script name was typed directly
+                    echo "\nRunning: ${PACKAGE_MANAGER} run $REPLY\n"
+                    $PACKAGE_MANAGER run $REPLY
+                    return 0
+                else
+                    echo "Invalid selection. Please try again."
                 fi
                 ;;
         esac
